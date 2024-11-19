@@ -2,6 +2,8 @@ package com.praactice.e_comerece.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 import java.util.Date;
 
@@ -9,9 +11,10 @@ import java.util.Date;
 public class TimeStamp {
 
     @Id
-    private  Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate ID
+    private Long id;
 
-    private Long date;
+    private Long date;  // You can consider changing this to Date or Instant if you like
 
     public Long getId() {
         return id;
@@ -27,5 +30,10 @@ public class TimeStamp {
 
     public void setDate(Long date) {
         this.date = date;
+    }
+
+    // Optionally, add a constructor to initialize date:
+    public TimeStamp() {
+        this.date = System.currentTimeMillis();  // current time in milliseconds
     }
 }

@@ -20,15 +20,15 @@ public class DataOperactionControllers {
 
    @PostMapping(value = "create")
     public ResponseEntity<?> createCategory(@RequestBody Categorys categorys){
-       Date date=new Date();
-       TimeStamp timeStamp =new TimeStamp();
-       timeStamp.setId(categorys.getId());
-       timeStamp.setDate(date.getTime());
+//       Date date=new Date();
+//       TimeStamp timeStamp =new TimeStamp();
+//       timeStamp.setId(categorys.getId());
+//       timeStamp.setDate(date.getTime());
 
     Categorys insta=new Categorys();
     insta.setId(categorys.getId());
     insta.setName(categorys.getName());
-    insta.setTimeStamp(timeStamp);
+//    insta.setTimeStamp(timeStamp);
 
      bussiness.create(categorys);
 
