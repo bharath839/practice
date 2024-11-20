@@ -26,9 +26,7 @@ public class DataOperactionControllers {
     Categorys insta=new Categorys();
     insta.setId(categorys.getId());
     insta.setName(categorys.getName());
-
      bussiness.create(categorys);
-
        if(insta!=null){
         return ResponseEntity.ok(insta);
       }else{
